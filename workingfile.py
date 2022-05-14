@@ -53,6 +53,8 @@ def test():
         test28()
         test29()
         test30()
+        test31()
+        test32()
 
 
 def test2(num=0):  #passing default value of 0 to n
@@ -437,6 +439,23 @@ def test30():
     s2 = ':'.join(l)
     print(s.split())
     print(s2)
+
+
+def test31():
+    f = open('lines.txt')
+    for line in f:
+        print(line.rstrip())  #rstrip is the trim() equivalent on python
+
+
+def test32():
+    infile = open('lines.txt', 'rt')  #opening in read and text mode
+    outfile = open('lines-copy.txt', 'wt')  #opening in write and text mode
+    for line in infile:
+        #outfile.writelines(line)
+        print(line.rstrip(), file=outfile)
+        print('.', end='', flush=True)
+    outfile.close()
+    print('\ndone.')
 
 
 if __name__ == '__main__':
