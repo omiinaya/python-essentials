@@ -52,6 +52,7 @@ def test():
         test27()
         test28()
         test29()
+        test30()
 
 
 def test2(num=0):  #passing default value of 0 to n
@@ -424,9 +425,18 @@ def test29():
     except ZeroDivisionError:
         print("don't divide by zero")
     except:
+        #using sys to get details about error.
         print(f'Unknown error. {sys.exec_info()[1]}')
     else:  #executes if no error
         print('good job!')
+
+
+def test30():
+    s = "lmao xd wtf 420"
+    l = s.split()
+    s2 = ':'.join(l)
+    print(s.split())
+    print(s2)
 
 
 if __name__ == '__main__':
