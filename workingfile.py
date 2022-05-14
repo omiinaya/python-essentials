@@ -55,6 +55,7 @@ def test():
         test30()
         test31()
         test32()
+        test33()
 
 
 def test2(num=0):  #passing default value of 0 to n
@@ -454,6 +455,20 @@ def test32():
         #outfile.writelines(line)
         print(line.rstrip(), file=outfile)
         print('.', end='', flush=True)
+    outfile.close()
+    print('\ndone.')
+
+
+def test33():
+    infile = open('berlin.jpg', 'rb')  #opening in read and text mode
+    outfile = open('berlin_copy.jpg', 'wb')  #opening in write and text mode
+    while True:
+        buf = infile.read(10240)
+        if (buf):
+            outfile.write(buf)
+            print('.', end='', flush=True)
+        else:
+            break
     outfile.close()
     print('\ndone.')
 
